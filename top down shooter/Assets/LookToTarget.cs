@@ -19,8 +19,12 @@ public class LookToTarget : MonoBehaviour
     // makes player look to the current position of the mouse
     private void LookToMousePosition()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var dir = mousePos - rigidBody2d.position;
-        rigidBody2d.MoveRotation(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f);
+        var mousePosInPixels = Input.mousePosition; // we got the mouse position in pixels
+        var mousePosInCoordinates = Camera.main.ScreenToWorldPoint(mousePosInPixels);
+        Vector2 dir = mousePosInCoordinates - transform.position;
+        var angleInRadians = Mathf.Atan2(dir.y, dir.x);
+        var angleInDegrees = angleInRadians * Mathf.Rad2Deg;
+        rigidBody2d.rotation = angleInDegrees - 90f;                   // rigidbody::rotation requires degrees not gradians
+                                                                       // it requires -90 degrees to aim the direction you want to
     }
 }
