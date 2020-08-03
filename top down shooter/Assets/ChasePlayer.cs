@@ -19,7 +19,8 @@ public class ChasePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        var dir = player.position - transform.position;
-        myRb.AddForce(dir.normalized * speed * Time.fixedDeltaTime);
+        var dir = (player.position - transform.position).normalized;
+        //myRb.AddForce(dir * speed * Time.fixedDeltaTime);
+        myRb.velocity = dir * speed * Time.fixedDeltaTime;
     }
 }
