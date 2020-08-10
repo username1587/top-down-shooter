@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Weapon
+  - GunBody
+  - GunSight
+  - GunBarrel
+  - GunMuzzle
+  - GunClip
+  - GunProjectile
+  - Wall
+  - GunStock
+  - SmokeTrail
+  - Spawner
+  - GunFlash
   layers:
   - Default
   - TransparentFX
@@ -14,7 +27,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - Obstacles
+  - 
   - 
   - 
   - 
@@ -38,15 +51,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: background
-    uniqueID: 2089604095
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 1389590565
-    locked: 0
-  - name: Obstacles
-    uniqueID: 3397951023
     locked: 0

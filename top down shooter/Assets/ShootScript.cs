@@ -15,7 +15,7 @@ public class ShootScript : MonoBehaviour
         {
             var bullet=Instantiate(bulletPrefab, bulletSpawnLocation.position, bulletPrefab.transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawnLocation.up * speed, ForceMode2D.Impulse);    // is here a memory leak?
-            Destroy(bullet, 3f);
+            Destroy(bullet, 10f);
         }
     }
 }
